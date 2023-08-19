@@ -1,5 +1,6 @@
 import Message from "../layout/Message"
 import Container from '../layout/Container'
+import Loading from "../layout/Loading"
 
 import { useLocation } from "react-router-dom"
 
@@ -11,6 +12,8 @@ import { useState, useEffect } from "react"
 function Projects(){
 
     const [projects, setProjects] = useState([])
+    const [removeLoading, setRemoveLoading] = useState(false)
+    const [projectMessage, setProjectMessage] = useState('') //
 
     const location = useLocation()
     let message = ''
@@ -28,11 +31,34 @@ function Projects(){
 
         }).then(resp => resp.json())
         .then(data => {
-            setProjects(data);
+            setProjects(data)
             console.log(data)
+            setRemoveLoading(true) //Parar de exibir o Loading depois que carregar os projetos
         })
         .catch(err => console.log(err))
     }, [])
+
+    function removeProject(id){
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+
+        }).then(resp => resp.json())
+        //.then(data => {
+        .then(() => {
+            setProjects(projects.filter(
+                (project) => project.id !== id
+            )) //Para excluir do front, porque já excluiu do back
+            setProjectMessage('Projeto removido com sucesso!')
+            setTimeout(()=>{
+                setProjectMessage('')
+            }, 2000)
+            
+        })
+        .catch(err => console.log(err))
+    }
 
     return(
         <div className={styles.project_container}>
@@ -44,6 +70,9 @@ function Projects(){
             {message && 
                 <Message type="success" msg={message} />
             }
+            {projectMessage && 
+                <Message type="success" msg={projectMessage} />
+            }
             <Container customClass="start">
                 {projects.length > 0 &&
                     projects.map(
@@ -54,8 +83,19 @@ function Projects(){
                                 budget = { project.budget }
                                 category = {project?.category?.name}
                                 key = { project.id }
+                                handleRemove={removeProject}
                             />
-                        )}
+                    )
+                }
+
+                {
+                    !removeLoading && <Loading /> //
+                }
+                {
+                    removeLoading && projects.length === 0 && ( //Quando o Remove Loadin Estiver como True e tiver zero projetos
+                        <p>Não há projetos cadastrados!</p>
+                    )
+                }
             </Container>
         </div>
     )
