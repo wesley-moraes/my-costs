@@ -1,5 +1,7 @@
 import Loading from '../layout/Loading'
 import Container from '../layout/Container'
+import ProjectForm from '../project/ProjectForm'
+import Message from '../layout/Message'
 
 import styles from './Project.module.css'
 
@@ -12,6 +14,9 @@ function Project(){
     const {id} = useParams()
     const [project, setProject] = useState([])
     const [showProjectForm, setShowProjectForm] = useState(false)
+    const [showServiceForm, setShowServiceForm] = useState(false)
+    const [message, setMessage] = useState()
+    const [type, setType] = useState()
 
     useEffect(() => {
         fetch(`http://localhost:5000/projects/${id}`, 
@@ -32,10 +37,47 @@ function Project(){
         setShowProjectForm(!showProjectForm) //Alterna entre true e false
     }
 
+    function toggleServiceForm(){
+        setShowServiceForm(!showServiceForm) //Alterna entre true e false
+    }
+
+    function editPost(project){
+        setMessage('')
+
+        //budget validation
+        if(project.budget < project.cost){
+            setMessage('O orçamento não pode ser menor que o custo do projeto! ')
+            setType('error')
+            return false
+        }
+
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(project)
+        })
+        .then(
+            resp => resp.json()
+        )
+        .then(
+            (data) => {
+                setProject(data)
+                setShowProjectForm(false)
+                //message
+                setMessage('Projeto atualizado')
+                setType('success')
+            }
+        )
+        .catch(err => console.log(err))
+    }
+
     return (
         <>
             {project.name ? (
                 <div className={styles.project_details}>
+                    {message && <Message type={type} msg={message} />}
                     <Container customClass="column">
                         <div className={styles.details_container}>
                             <h1>Projeto: {project.name}</h1>
@@ -56,10 +98,33 @@ function Project(){
                                 </div>
                             ) : (
                                 <div className={styles.project_info}>
-                                    <p>Detalhes do projeto</p>    
+                                    <ProjectForm 
+                                        handleSubmit = {editPost} 
+                                        btnText = "Concluir Edição" 
+                                        projectData = {project}
+                                    />    
                                 </div>
                             )}
                         </div>
+                        <div className={styles.service_form_container}>
+                            <h2>Adicone um serviço: </h2>
+                            <button className={styles.btn} onClick={toggleServiceForm}>
+                                {!showServiceForm ? 'Adiconar Serviço' : 'Fechar'}    
+                            </button>
+                            <div className={styles.project_info}>
+                                {showServiceForm && (
+                                    <div>
+                                        Formulario do servico    
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                        <h2>
+                            Serviços
+                        </h2>
+                        <Container customClass="start">
+                            <p>Servicos</p>
+                        </Container>
                     </Container>
                 </div>
                 ) : (

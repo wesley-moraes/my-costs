@@ -10,17 +10,6 @@
       "cost": 0,
       "services": [],
       "id": 4
-    },
-    {
-      "name": "Página de Astrologia",
-      "budget": "12000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 5
     }
   ],
   "categories": [

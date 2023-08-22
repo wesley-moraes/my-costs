@@ -39,6 +39,8 @@ function Projects(){
     }, [])
 
     function removeProject(id){
+        setProjectMessage('')
+
         fetch(`http://localhost:5000/projects/${id}`, {
             method: 'DELETE',
             headers: {
@@ -52,9 +54,6 @@ function Projects(){
                 (project) => project.id !== id
             )) //Para excluir do front, porque já excluiu do back
             setProjectMessage('Projeto removido com sucesso!')
-            setTimeout(()=>{
-                setProjectMessage('')
-            }, 2000)
             
         })
         .catch(err => console.log(err))
