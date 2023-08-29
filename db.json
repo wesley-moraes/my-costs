@@ -7,9 +7,63 @@
       },
       "name": "League of Legends",
       "budget": "5000",
+      "cost": 700,
+      "services": [
+        {
+          "name": "Serviço 1",
+          "cost": "100",
+          "description": "Ser 1",
+          "id": "1a9eab6b-1ffe-492e-a84c-a16ed2dea86a"
+        },
+        {
+          "name": "Serviço 2",
+          "cost": "200",
+          "description": "Um novo serviçoxD",
+          "id": "3f4ed154-6658-45ab-9c2b-6e0bf697a125"
+        },
+        {
+          "name": "Serviço 2",
+          "cost": "200",
+          "description": "Um novo serviçoxD",
+          "id": "3f4ed154-6658-45ab-9c2b-6e0bf697a125"
+        },
+        {
+          "name": "Serviço 2",
+          "cost": "200",
+          "description": "Um novo serviçoxD",
+          "id": "3f4ed154-6658-45ab-9c2b-6e0bf697a125"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Projeto 2",
+      "budget": "30000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 200,
+      "services": [
+        {
+          "name": "Serv 1",
+          "cost": "200",
+          "description": "Descrição do serviço",
+          "id": "ba9eea33-db73-479d-8df7-189d86869b05"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "Projeto 3",
+      "budget": "10000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
       "cost": 0,
       "services": [],
-      "id": 4
+      "id": 6
     }
   ],
   "categories": [
