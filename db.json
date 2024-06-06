@@ -55,15 +55,40 @@
       "id": 5
     },
     {
-      "name": "Projeto 3",
+      "name": "Projeto Simon",
       "budget": "10000",
       "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
-      "id": 6
+      "cost": 100,
+      "services": [
+        {
+          "name": "Cadastrar nomes em Python",
+          "description": "Sem remuneração! Apenas aprendizado",
+          "cost": "100",
+          "id": "bd660548-e0d7-4e5e-8642-2da733a4b13d"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "name": "Natalia GRATIDAO",
+      "budget": "1000000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 3000,
+      "services": [
+        {
+          "name": "Fiscal",
+          "cost": "3000",
+          "description": "La la la",
+          "id": "7e638e68-82b5-4dfb-a8bb-c00333feeb19"
+        }
+      ],
+      "id": 8
     }
   ],
   "categories": [

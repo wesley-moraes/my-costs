@@ -16,7 +16,11 @@ function NewProject(){
         //Ao longo da utilização o custo vai aumentando ou diminuindo, inclusive na questão dos serviços. 
         //Mas a principio temos que iniciar com o valor 0 ou vazio
 
+        /*
+        funcionar local
         fetch("http://localhost:5000/projects",{
+        */
+        fetch("https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/",{
             method : "POST",
             headers : {
                 "Content-type" : "application/json"

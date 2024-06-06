@@ -22,7 +22,10 @@ function Projects(){
     }
 
     useEffect(() => {
+        /*funcionar local
         fetch('http://localhost:5000/projects', {
+        */
+        fetch("https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/", {
             method: 'GET',
             headers: {
                 'Content-Type' : 'application/json'
