@@ -17,10 +17,10 @@ function NewProject(){
         //Mas a principio temos que iniciar com o valor 0 ou vazio
 
         /*
-        funcionar local
-        fetch("http://localhost:5000/projects",{
-        */
         fetch("https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/",{
+        
+        */
+            fetch("http://localhost:5000/projects",{
             method : "POST",
             headers : {
                 "Content-type" : "application/json"

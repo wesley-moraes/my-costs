@@ -67,9 +67,11 @@ function Project(){
 
         //update project
         /**
-        
-        */
         fetch(`https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/${project.id}`, {
+        fetch(`http://localhost:5000/projects/${id}`,
+        */
+        
+        fetch(`http://localhost:5000/projects/${project.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -102,11 +104,11 @@ function Project(){
         projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
 
         /**
-        Funcionar local
-        fetch(`http://localhost:5000/projects/${projectUpdated.id}`,{
-        */
-
+        
         fetch(`https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/${projectUpdated.id}`,{
+        */
+        fetch(`http://localhost:5000/projects/${projectUpdated.id}`,{
+        
             method: "PATCH",
             headers:{
                 'Content-Type' : 'application/json'
@@ -141,9 +143,10 @@ function Project(){
         }
 
         /**
-            fetch(`http://localhost:5000/projects/${id}`, {
+            fetch(`https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/${id}`, {
         */
-        fetch(`https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/${id}`, {
+            fetch(`http://localhost:5000/projects/${id}`, {
+        
             method: "PATCH",
             headers: {
                 'Content-Type' : 'application/json'

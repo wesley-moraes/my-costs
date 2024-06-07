@@ -12,11 +12,14 @@ function ProjectForm({handleSubmit, btnText, projectData}){
     const [project, setProject] = useState(projectData || {}) //Para edição! Ou eu crio algo novo ou já tenho e quero editar
 
     useEffect(()=> {
-        /*
-        Funcionar local
+        
         fetch("http://localhost:5000/categories",{
+        
+
+        /* 
+            fetch("https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/categories/",{
         */
-        fetch("https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/categories/",{
+        
         method: "GET",
         headers: {
             "Content-Type" : "application/json"
