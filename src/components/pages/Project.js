@@ -5,13 +5,13 @@ import ServiceForm from '../service/ServiceForm'
 import Message from '../layout/Message'
 import ServiceCard from '../service/ServiceCard'
 
-import {parse, v4 as uuidv4} from 'uuid'
+import {v4 as uuidv4} from 'uuid'
 
 import styles from './Project.module.css'
 
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { BsToggle2Off } from 'react-icons/bs'
+//import { BsToggle2Off } from 'react-icons/bs'
 
 function Project(){
 
@@ -25,16 +25,14 @@ function Project(){
 
 
     useEffect(() => {
-        /*
-        Funcionar local
+        
         fetch(`http://localhost:5000/projects/${id}`,
-        */
-        fetch(`https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/${id}`, 
+        
             {
                 method: 'GET',
                 headers : {
                     'Content-Type' :  'application/json'
-                },    
+                },
             }
         ).then((resp) => resp.json())
         .then((data) => {
