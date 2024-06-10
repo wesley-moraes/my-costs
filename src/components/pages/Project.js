@@ -26,7 +26,7 @@ function Project(){
 
     useEffect(() => {
         
-        fetch(`http://localhost:5000/projects/${id}`,
+        fetch(`https://my-costs-db.onrender.com/projects/${id}`,
         
             {
                 method: 'GET',
@@ -71,7 +71,7 @@ function Project(){
         fetch(`http://localhost:5000/projects/${id}`,
         */
         
-        fetch(`http://localhost:5000/projects/${project.id}`, {
+        fetch(`https://my-costs-db.onrender.com/projects/${project.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -107,7 +107,7 @@ function Project(){
         
         fetch(`https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/${projectUpdated.id}`,{
         */
-        fetch(`http://localhost:5000/projects/${projectUpdated.id}`,{
+        fetch(`https://my-costs-db.onrender.com/projects/${projectUpdated.id}`,{
         
             method: "PATCH",
             headers:{
@@ -145,7 +145,7 @@ function Project(){
         /**
             fetch(`https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/${id}`, {
         */
-            fetch(`http://localhost:5000/projects/${id}`, {
+            fetch(`https://my-costs-db.onrender.com/projects/${id}`, {
         
             method: "PATCH",
             headers: {

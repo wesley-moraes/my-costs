@@ -20,7 +20,7 @@ function NewProject(){
         fetch("https://my-json-server.typicode.com/wesley-moraes/my-costs/main/db.json/projects/",{
         
         */
-            fetch("http://localhost:5000/projects",{
+            fetch("https://my-costs-db.onrender.com/projects",{
             method : "POST",
             headers : {
                 "Content-type" : "application/json"

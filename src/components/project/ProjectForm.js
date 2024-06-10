@@ -13,7 +13,7 @@ function ProjectForm({handleSubmit, btnText, projectData}){
 
     useEffect(()=> {
         
-        fetch("http://localhost:5000/categories",{
+        fetch("https://my-costs-db.onrender.com/categories",{
         
 
         /* 
