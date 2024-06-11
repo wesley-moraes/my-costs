@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# My Costs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Aplicação web para gerenciamento de projetos!
 
-## Available Scripts
+### Deploy: [My Costs](https://my-costs-two.vercel.app/)
 
-In the project directory, you can run:
+## Descrição
+My Costs é uma aplicação web desenvolvida em React.js que permite o gerenciamento de projetos com funcionalidades completas de CRUD (Create, Read, Update, Delete). Além disso, você pode adicionar descrições detalhadas para os serviços inseridos.
 
-### `npm start`
+## Instalação
+Para instalar e rodar a aplicação localmente, siga os passos abaixo no seu terminal de comandos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+git clone git@github.com:wesley-moraes/my-costs.git
+cd my-costs
+npm i
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para rodar a aplicação localmente, inicie o servidor React com o comando:
 
-### `npm test`
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O seu próprio terminal dirá como acessar geralmente em *http://localhost:3000*
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A base de dados está configurada para ser acessada via um Web-Service. Caso deseje rodar a base de dados localmente, altere as rotas para apontarem para o servidor local e execute o json-server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para rodar o json-server, execute o comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run backend
+```
 
-### `npm run eject`
+Você pode encontrar esses comandos no arquivo `package.json`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Configuração de Rotas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para alternar as rotas do Web-Service, substitua as URLs nos trechos de código que fazem fetch para os dados. Por exemplo, altere:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+fetch("https://my-costs-db.onrender.com/projects", { ... })
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para:
+```bash
+fetch("http://localhost:5000/projects", { ... })
+```
 
-## Learn More
+## Hospedagem
+A aplicação está hospedada no Vercel e o Web-Service está hospedado no Render para garantir que tudo esteja disponível online.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+O repositório da base de dados pode ser [acessado aqui](https://github.com/wesley-moraes/my-costs-db)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contato
+Para mais informações ou para reportar problemas, entre em contato:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email: wesley.moraes@example.com
+- GitHub: [wesley-moraes](https://github.com/wesley-moraes/)
+- LinkedIn: [Wesley Moraes](https://www.linkedin.com/in/wesley-moraes/)
