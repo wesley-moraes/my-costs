@@ -45,7 +45,7 @@ function Projects(){
     function removeProject(id){
         setProjectMessage('')
 
-        fetch(`https://my-costs-db.onrender.com/${id}`, {
+        fetch(`https://my-costs-db.onrender.com/projects/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type' : 'application/json'
